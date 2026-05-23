@@ -4,14 +4,13 @@ A modern landing page for a kanban-style productivity application.
 
 ## ✨ Features
 
-- Animated landing page with hero section and feature highlights
-- Kanban board preview showcasing the product
-- Features, comparison, and workflow sections
-- Pricing section with social proof
-- Call-to-action sections with responsive navbar and footer
+- User authentication with login and signup pages
+- Secure session management via Supabase SSR
+- Onboarding flow for new users
+- Organization setup form for team creation
+- Route protection middleware
 - Smooth animations powered by Framer Motion
-- Supabase integration for authentication and data management
-- Tailwind CSS for modern, responsive styling
+- Responsive styling with Tailwind CSS
 
 ## 🛠️ Tech Stack
 
@@ -77,6 +76,7 @@ Then open [http://localhost:3000](http://localhost:3000) in your browser.
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | ✅ Yes | [Supabase Dashboard](https://supabase.com/dashboard) → Project Settings → API → anon/public key | Public API key for client-side requests |
 
 **How to get Supabase credentials:**
+
 1. Go to [supabase.com](https://supabase.com) and sign in
 2. Click "New Project" or select an existing project
 3. Go to **Project Settings** (gear icon)
@@ -86,25 +86,27 @@ Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 📁 Project Structure
 
-- `src/app` — Next.js App Router: global styles, root layout, and home page
-- `src/components/landing` — Landing page components (navbar, hero, features, pricing, footer, etc.)
-- `src/lib` — Utility functions, Supabase client/server setup, and data helpers
-- `src/lib/supabase` — Supabase client and server-side authentication helpers
+- `src/app/(auth)` — Authentication pages (login, signup, onboarding)
+- `src/app/(app)` — App layout and protected routes
+- `src/components/auth` — Reusable authentication components (login form, signup form, organization form)
+- `src/lib` — Utility functions (class name merging, helpers)
+- `src/middleware.ts` — Route protection and session management
 
 ## 🚀 Deploy to Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+[![Deploy](https://vercel.com/button)](https://vercel.com/new)
 
-**Step-by-step:**
+**Step by step:**
 
-1. Click the button above or go to [vercel.com/new](https://vercel.com/new)
+1. Click the "Deploy" button above or go to [vercel.com/new](https://vercel.com/new)
 2. Import your GitHub repository
-3. In the **Environment Variables** section, add each variable from your `.env.local`:
-   - `NEXT_PUBLIC_SUPABASE_URL` → paste your Supabase URL
-   - `NEXT_PUBLIC_SUPABASE_ANON_KEY` → paste your Supabase anon key
+3. Add your environment variables:
+   - Go to **Settings** → **Environment Variables**
+   - Add `NEXT_PUBLIC_SUPABASE_URL` with your Supabase project URL
+   - Add `NEXT_PUBLIC_SUPABASE_ANON_KEY` with your Supabase anon key
 4. Click **Deploy**
 
-> ⚠️ **Important**: Make sure to add all environment variables in Vercel before deploying. If you forget, go to Vercel Dashboard → Your Project → Settings → Environment Variables to add them manually, then redeploy.
+Your app will be live at a `.vercel.app` URL within seconds.
 
 ## 📝 License
 
