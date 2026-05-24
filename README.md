@@ -1,17 +1,16 @@
 # my-app
 
-A modern landing page for a kanban-style productivity application.
+A modern CRM application with a Kanban-style pipeline board for managing sales opportunities.
 
 ## ✨ Features
 
-- Animated landing page with hero section and feature highlights
-- Kanban board preview showcasing the product
-- Features, comparison, and workflow sections
-- Pricing section with social proof
-- Call-to-action sections with responsive navbar and footer
+- Visual Kanban board for tracking sales opportunities through pipeline stages
+- Add and manage opportunities with essential details
+- Drag-and-drop style card display (UI structure in place)
+- RESTful API for opportunity CRUD operations
+- Stage management for opportunities
+- Responsive design with Tailwind CSS
 - Smooth animations powered by Framer Motion
-- Supabase integration for authentication and data management
-- Tailwind CSS for modern, responsive styling
 
 ## 🛠️ Tech Stack
 
@@ -77,6 +76,7 @@ Then open [http://localhost:3000](http://localhost:3000) in your browser.
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | ✅ Yes | [Supabase Dashboard](https://supabase.com/dashboard) → Project Settings → API → anon/public key | Public API key for client-side requests |
 
 **How to get Supabase credentials:**
+
 1. Go to [supabase.com](https://supabase.com) and sign in
 2. Click "New Project" or select an existing project
 3. Go to **Project Settings** (gear icon)
@@ -86,25 +86,24 @@ Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 📁 Project Structure
 
-- `src/app` — Next.js App Router: global styles, root layout, and home page
-- `src/components/landing` — Landing page components (navbar, hero, features, pricing, footer, etc.)
-- `src/lib` — Utility functions, Supabase client/server setup, and data helpers
-- `src/lib/supabase` — Supabase client and server-side authentication helpers
+- `src/app/(app)/pipeline` — Pipeline page with Kanban board
+- `src/app/api/opportunities` — API routes for opportunity CRUD operations
+- `src/components/pipeline` — Kanban board components (board, column, card, modal)
+- `src/lib` — Shared types and utilities
 
 ## 🚀 Deploy to Vercel
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
 
-**Step-by-step:**
-
-1. Click the button above or go to [vercel.com/new](https://vercel.com/new)
+1. Click the "Deploy with Vercel" button above
 2. Import your GitHub repository
-3. In the **Environment Variables** section, add each variable from your `.env.local`:
-   - `NEXT_PUBLIC_SUPABASE_URL` → paste your Supabase URL
-   - `NEXT_PUBLIC_SUPABASE_ANON_KEY` → paste your Supabase anon key
-4. Click **Deploy**
+3. In the Vercel dashboard, go to **Settings** → **Environment Variables**
+4. Add all variables from your `.env.local` file:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+5. Click **Deploy**
 
-> ⚠️ **Important**: Make sure to add all environment variables in Vercel before deploying. If you forget, go to Vercel Dashboard → Your Project → Settings → Environment Variables to add them manually, then redeploy.
+Your app will be live at a Vercel-provided URL.
 
 ## 📝 License
 
