@@ -1,16 +1,16 @@
 # my-app
 
-A modern landing page for a kanban-style productivity application.
+A modern CRM application with a Kanban-style pipeline board for managing sales opportunities.
 
 ## ✨ Features
 
-- User authentication with login and signup pages
-- Secure session management via Supabase SSR
-- Onboarding flow for new users
-- Organization setup form for team creation
-- Route protection middleware
+- Visual Kanban board for tracking sales opportunities through pipeline stages
+- Add and manage opportunities with essential details
+- Drag-and-drop style card display (UI structure in place)
+- RESTful API for opportunity CRUD operations
+- Stage management for opportunities
+- Responsive design with Tailwind CSS
 - Smooth animations powered by Framer Motion
-- Responsive styling with Tailwind CSS
 
 ## 🛠️ Tech Stack
 
@@ -86,27 +86,24 @@ Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 📁 Project Structure
 
-- `src/app/(auth)` — Authentication pages (login, signup, onboarding)
-- `src/app/(app)` — App layout and protected routes
-- `src/components/auth` — Reusable authentication components (login form, signup form, organization form)
-- `src/lib` — Utility functions (class name merging, helpers)
-- `src/middleware.ts` — Route protection and session management
+- `src/app/(app)/pipeline` — Pipeline page with Kanban board
+- `src/app/api/opportunities` — API routes for opportunity CRUD operations
+- `src/components/pipeline` — Kanban board components (board, column, card, modal)
+- `src/lib` — Shared types and utilities
 
 ## 🚀 Deploy to Vercel
 
-[![Deploy](https://vercel.com/button)](https://vercel.com/new)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
 
-**Step by step:**
-
-1. Click the "Deploy" button above or go to [vercel.com/new](https://vercel.com/new)
+1. Click the "Deploy with Vercel" button above
 2. Import your GitHub repository
-3. Add your environment variables:
-   - Go to **Settings** → **Environment Variables**
-   - Add `NEXT_PUBLIC_SUPABASE_URL` with your Supabase project URL
-   - Add `NEXT_PUBLIC_SUPABASE_ANON_KEY` with your Supabase anon key
-4. Click **Deploy**
+3. In the Vercel dashboard, go to **Settings** → **Environment Variables**
+4. Add all variables from your `.env.local` file:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+5. Click **Deploy**
 
-Your app will be live at a `.vercel.app` URL within seconds.
+Your app will be live at a Vercel-provided URL.
 
 ## 📝 License
 
